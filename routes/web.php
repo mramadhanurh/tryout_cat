@@ -20,3 +20,4 @@ Route::get('/', function () {
 
 Route::get('/exams', [QuestionController::class, 'index']);
 Route::get('/get-questions', [QuestionController::class, 'getQuestions']);
+Route::get('/question-by-id/{id}', [QuestionController::class, 'getQuestionById']);
