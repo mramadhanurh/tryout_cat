@@ -25,7 +25,16 @@ Route::get('/', function () {
 
 // Route::view('/admin/home', 'admin.dashboard');
 Route::get('/admin/home', [AdminController::class, 'index']);
-Route::get('/admin/datatipesoal', [DatatipesoalController::class, 'index']);
+
+// Route Data Tipe Soal
+Route::get('/admin/datatipesoal', [DatatipesoalController::class, 'index'])->name('datatipesoal.index');
+Route::get('/admin/datatipesoal/create', [DatatipesoalController::class, 'create'])->name('datatipesoal.create');
+Route::post('/admin/datatipesoal/create', [DatatipesoalController::class, 'store'])->name('datatipesoal.store');
+Route::get('/admin/datatipesoal/edit/{id}', [DatatipesoalController::class, 'edit'])->name('datatipesoal.edit');
+Route::post('/admin/datatipesoal/edit', [DatatipesoalController::class, 'update'])->name('datatipesoal.update');
+Route::delete('/admin/datatipesoal/delete/{id}', [DatatipesoalController::class, 'destroy'])->name('datatipesoal.destroy');
+
+// Route Data Soal
 Route::get('/admin/datasoal', [DatasoalController::class, 'index'])->name('datasoal.index');
 Route::get('/admin/datasoal/create', [DatasoalController::class, 'create'])->name('datasoal.create');
 Route::post('/admin/datasoal/create', [DatasoalController::class, 'store'])->name('datasoal.store');

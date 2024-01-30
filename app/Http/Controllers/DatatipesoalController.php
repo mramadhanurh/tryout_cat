@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Datatipesoal;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DatatipesoalController extends Controller
 {
@@ -13,7 +15,8 @@ class DatatipesoalController extends Controller
 
     public function index()
     {
-        return view('admin.data_tipe_soal.index');
+        $tipe_soal = Datatipesoal::latest()->get();
+        return view('admin.data_tipe_soal.index', compact('tipe_soal'));
     }
 
     /**
@@ -23,18 +26,24 @@ class DatatipesoalController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.data_tipe_soal.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'tipe_soal'=>'required',
+        ]);
+
+        $query = DB::table('datatipesoals')->insert([
+            'tipe_soal' => $request->input('tipe_soal'),
+        ]);
+
+        if($query){
+            return back()->with('success','Data berhasil disimpan!');
+        }else{
+            return back()->with('fail','Something went wrong');
+        }
     }
 
     /**
@@ -48,37 +57,45 @@ class DatatipesoalController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
-        //
+        $row = DB::table('datatipesoals')
+                    ->where('id', $id)
+                    ->first();
+        $data = [
+            'Info'=>$row
+        ];
+
+        return view('admin.data_tipe_soal.edit', compact('data'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'tipe_soal'=>'required',
+        ]);
+
+        $update = DB::table('datatipesoals')
+                    ->where('id', $request->input('id'))
+                    ->update([
+                        'tipe_soal' => $request->input('tipe_soal'),
+                    ]);
+        if($update){
+            return back()->with('success','Data berhasil diupdate!');
+        }else{
+            return back()->with('fail','Something went wrong');
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $delete = DB::table('datatipesoals')
+                    ->where('id', $id)
+                    ->delete();
+        if($delete){
+            return back()->with('success','Data berhasil dihapus!');
+        }else{
+            return back()->with('fail','Something went wrong');
+        }
     }
 }

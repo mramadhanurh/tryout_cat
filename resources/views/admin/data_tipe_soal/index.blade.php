@@ -10,11 +10,22 @@
             <div class="head-label">
                 <h5 class="card-title mb-0">Data Tipe Soal</h5>
             </div>
+                @if(Session::get('success'))
+                    <div class="alert alert-success">
+                        {{ Session::get('success') }}
+                    </div>
+                @endif
+
+                @if(Session::get('fail'))
+                    <div class="alert alert-danger">
+                        {{ Session::get('fail') }}
+                    </div>
+                @endif
             <div class="table-responsive text-nowrap">
                 <div class="dt-action-buttons text-end">
                     <div class="dt-buttons btn-group flex-wrap">
                         <div class="btn-group">
-                            <a href="#" type="button" class="btn btn-secondary create-new btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button">
+                            <a href="{{ route('datatipesoal.create') }}" type="button" class="btn btn-secondary create-new btn-primary" tabindex="0" aria-controls="DataTables_Table_0" type="button">
                                 <span><i class="bx bx-plus me-1"></i>
                                     <span class="d-none d-lg-inline-block">Tambah Data</span>
                                 </span>
@@ -31,66 +42,24 @@
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                        <tr>
-                            <td>
-                                1
-                            </td>
-                            <td>
-                                <span class="fw-medium">TKP</span>
-                            </td>
-                            <td class="text-center" width="200">
-                                <form action="#" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <a type="button" class="btn btn-sm btn-warning" href="#">
-                                        <i class="bx bx-edit-alt me-1"></i> Edit
-                                    </a>
-                                    <button type="submit" class="btn btn-sm btn-danger">
-                                        <i class="bx bx-trash me-1"></i> Delete
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                2
-                            </td>
-                            <td>
-                                <span class="fw-medium">TWK</span>
-                            </td>
-                            <td class="text-center" width="200">
-                                <form action="#" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <a type="button" class="btn btn-sm btn-warning" href="#">
-                                        <i class="bx bx-edit-alt me-1"></i> Edit
-                                    </a>
-                                    <button type="submit" class="btn btn-sm btn-danger">
-                                        <i class="bx bx-trash me-1"></i> Delete
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                3
-                            </td>
-                            <td>
-                                <span class="fw-medium">TIU</span>
-                            </td>
-                            <td class="text-center" width="200">
-                                <form action="#" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <a type="button" class="btn btn-sm btn-warning" href="#">
-                                        <i class="bx bx-edit-alt me-1"></i> Edit
-                                    </a>
-                                    <button type="submit" class="btn btn-sm btn-danger">
-                                        <i class="bx bx-trash me-1"></i> Delete
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
+                        @foreach($tipe_soal as $item)
+                            <tr>
+                                <td>{{ $loop->iteration }}.</td>
+                                <td>{{ $item->tipe_soal }}</td>
+                                <td class="text-center" width="200">
+                                    <form action="{{ route('datatipesoal.destroy', $item->id)}}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+                                        <a type="button" class="btn btn-sm btn-warning" href="{{ route('datatipesoal.edit', $item->id) }}">
+                                            <i class="bx bx-edit-alt me-1"></i> Edit
+                                        </a>
+                                        <button type="submit" class="btn btn-sm btn-danger">
+                                            <i class="bx bx-trash me-1"></i> Delete
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
