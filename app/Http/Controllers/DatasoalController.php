@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Datatipesoal;
 use App\Models\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -26,17 +27,20 @@ class DatasoalController extends Controller
      */
     public function create()
     {
-        return view('admin.data_soal.create');
+        $tipe_soal = Datatipesoal::get();
+        return view('admin.data_soal.create', compact('tipe_soal'));
     }
 
     public function store(Request $request)
     {
         $request->validate([
             'question_text'=>'required',
+            'datatipesoal_id'=>'required',
         ]);
 
         $query = DB::table('questions')->insert([
             'question_text' => $request->input('question_text'),
+            'datatipesoal_id' => $request->input('datatipesoal_id'),
         ]);
 
         if($query){
@@ -54,36 +58,43 @@ class DatasoalController extends Controller
      */
     public function show($id)
     {
-        //
+        $tipe_soal = Datatipesoal::get();
+        $data = Question::findOrFail($id);
+
+        return view('admin.data_soal.show', compact('data', 'tipe_soal'));
     }
 
     public function edit($id)
     {
-        $row = DB::table('questions')
-                    ->where('id', $id)
-                    ->first();
-        $data = [
-            'Info'=>$row
-        ];
+        // $row = DB::table('questions')
+        //             ->where('id', $id)
+        //             ->first();
+        // $data = [
+        //     'Info'=>$row
+        // ];
+        $tipe_soal = Datatipesoal::get();
+        $data = Question::findOrFail($id);
 
-        return view('admin.data_soal.edit', compact('data'));
+        return view('admin.data_soal.edit', compact('data', 'tipe_soal'));
     }
 
     public function update(Request $request)
     {
-        $request->validate([
-            'question_text'=>'required',
-        ]);
+        // $request->validate([
+        //     'question_text'=>'required',
+        //     'datatipesoal_id'=>'required',
+        // ]);
 
         $update = DB::table('questions')
                     ->where('id', $request->input('id'))
                     ->update([
                         'question_text' => $request->input('question_text'),
+                        'datatipesoal_id' => $request->input('datatipesoal_id'),
                     ]);
         if($update){
             return back()->with('success','Data berhasil diupdate!');
         }else{
-            return back()->with('fail','Something went wrong');
+            return redirect()->back();
         }
     }
 

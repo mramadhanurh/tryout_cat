@@ -9,7 +9,7 @@ class Question extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['question_text'];
+    protected $fillable = ['question_text', 'datatipesoal_id'];
 
     public function answers()
     {
@@ -19,5 +19,10 @@ class Question extends Model
     public function addAnswer($answerText, $weight)
     {
         $this->answers()->create(compact('answerText', 'weight'));
+    }
+
+    public function tipeSoal()
+    {
+        return $this->belongsTo(Datatipesoal::class, 'datatipesoal_id');
     }
 }

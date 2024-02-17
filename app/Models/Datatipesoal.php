@@ -10,4 +10,9 @@ class Datatipesoal extends Model
     use HasFactory;
 
     protected $fillable = ['tipe_soal'];
+
+    public function soals()
+    {
+        return $this->hasMany(Question::class);
+    }
 }

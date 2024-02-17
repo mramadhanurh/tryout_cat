@@ -32,8 +32,8 @@
                             </a>
                         </div>
                     </div>
-                </div>
-                <table class="table">
+                </div><br>
+                <table class="table" id="datatable">
                     <thead>
                         <tr>
                             <th>No</th>
@@ -67,4 +67,12 @@
     </div>
 </div>
 
+@endsection
+
+@section('js')
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#datatable').DataTable();
+        })
+    </script>
 @endsection

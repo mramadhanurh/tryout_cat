@@ -35,6 +35,9 @@
   <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
   <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
   <script src="{{asset('template')}}/assets/js/config.js"></script>
+
+  <link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet"/>
+
 </head>
 
 <body>
@@ -237,6 +240,12 @@
 
   <!-- Place this tag in your head or just before your close body tag. -->
   <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+  <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
+
+  <script src="https://cdn.ckeditor.com/ckeditor5/41.1.0/classic/ckeditor.js"></script>
+
+  @yield('js')
 </body>
 
 </html>

@@ -26,6 +26,13 @@
         </a>
     </li>
 
+    <li class="menu-item {{ request()->is('admin/datajawaban') ? 'active' : '' }}">
+        <a href="/admin/datajawaban" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+            <div data-i18n="Basic">Data Jawaban</div>
+        </a>
+    </li>
+
     <li class="menu-header small text-uppercase">
         <span class="menu-header-text">Data Utama</span>
     </li>
