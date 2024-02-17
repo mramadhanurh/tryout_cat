@@ -36,8 +36,8 @@
     <li class="menu-header small text-uppercase">
         <span class="menu-header-text">Data Utama</span>
     </li>
-    <li class="menu-item">
-        <a href="cards-basic.html" class="menu-link">
+    <li class="menu-item {{ request()->is('admin/datapeserta') ? 'active' : '' }}">
+        <a href="/admin/datapeserta" class="menu-link">
             <i class="menu-icon tf-icons bx bx-home-circle"></i>
             <div data-i18n="Basic">Data Peserta</div>
         </a>

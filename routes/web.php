@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\DatasoalController;
 use App\Http\Controllers\DatatipesoalController;
+use App\Http\Controllers\PesertaController;
 use App\Http\Controllers\QuestionController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,9 +24,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/daftar', function () {
-    return view('daftar');
-});
+Route::get('/daftar', [PesertaController::class, 'index'])->name('daftar');
+Route::post('/daftar/create', [PesertaController::class, 'store'])->name('daftar.store');
 
 
 // Route::view('/admin/home', 'admin.dashboard');
@@ -56,6 +56,10 @@ Route::get('/admin/datajawaban/show/{id}', [AnswerController::class, 'show'])->n
 Route::get('/admin/datajawaban/edit/{id}', [AnswerController::class, 'edit'])->name('datajawaban.edit');
 Route::post('/admin/datajawaban/edit', [AnswerController::class, 'update'])->name('datajawaban.update');
 Route::delete('/admin/datajawaban/delete/{id}', [AnswerController::class, 'destroy'])->name('datajawaban.destroy');
+
+// Route Data Peserta
+Route::get('/admin/datapeserta', [PesertaController::class, 'list'])->name('datapeserta.index');
+Route::delete('/admin/datapeserta/delete/{id}', [PesertaController::class, 'destroy'])->name('datapeserta.destroy');
 
 Route::get('/exams', [QuestionController::class, 'index']);
 Route::get('/get-questions', [QuestionController::class, 'getQuestions']);

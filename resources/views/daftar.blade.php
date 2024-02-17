@@ -25,6 +25,7 @@
     <link href="{{ asset('beranda/css/owl.carousel.min.css') }}" rel="stylesheet">
     <link href="{{ asset('beranda/css/owl.theme.default.min.css') }}" rel="stylesheet">
     <link href="{{ asset('beranda/css/tooplate-gotto-job.css') }}" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
@@ -97,9 +98,16 @@
         <section class="section-padding pb-0 d-flex justify-content-center align-items-center">
             <div class="container">
                 <div class="row">
+                @if(session('success'))
+                    <script>
+                        Swal.fire('Success', '{{ session('success') }}', 'success');
+                    </script>
+                @endif
+
 
                     <div class="col-lg-12 col-12">
-                        <form class="custom-form hero-form" action="#" method="get" role="form">
+                        <form action="{{ route('daftar.store') }}" method="POST" class="custom-form hero-form" role="form">
+                        @csrf
                             <h3 class="text-white mb-3">Silahkan isi pendaftaran..</h3>
 
                             <div class="row">
@@ -107,16 +115,18 @@
                                     <div class="input-group">
                                         <span class="input-group-text" id="basic-addon1"><i class="bi-person custom-icon"></i></span>
 
-                                        <input type="text" name="nama-lengkap" id="nama-lengkap" class="form-control" placeholder="Nama Lengkap" required>
+                                        <input type="text" name="nama_lengkap" id="nama_lengkap" class="form-control" placeholder="Nama Lengkap" value="{{ old('nama_lengkap') }}">
                                     </div>
+                                    <span style="color:red">@error('nama_lengkap') {{ $message }} @enderror</span>
                                 </div>
 
                                 <div class="col-lg-6 col-md-6 col-12">
                                     <div class="input-group">
                                         <span class="input-group-text" id="basic-addon1"><i class="bi-phone custom-icon"></i></span>
 
-                                        <input type="text" name="no_wa" id="no_wa" class="form-control" placeholder="No. WA" required>
+                                        <input type="text" name="no_wa" id="no_wa" class="form-control" placeholder="No. WA" value="{{ old('no_wa') }}">
                                     </div>
+                                    <span style="color:red">@error('no_wa') {{ $message }} @enderror</span>
                                 </div>
 
                                 <div class="col-lg-12 col-12">
