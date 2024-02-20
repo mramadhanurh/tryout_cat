@@ -6,6 +6,7 @@ use App\Http\Controllers\DatasoalController;
 use App\Http\Controllers\DatatipesoalController;
 use App\Http\Controllers\PesertaController;
 use App\Http\Controllers\QuestionController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Auth::routes();
 
 Route::get('/', function () {
@@ -27,9 +29,19 @@ Route::get('/', function () {
 Route::get('/daftar', [PesertaController::class, 'index'])->name('daftar');
 Route::post('/daftar/create', [PesertaController::class, 'store'])->name('daftar.store');
 
+Route::middleware(['auth', 'checkrole:admin,user'])->group(function () {
+    Route::get('/home', [AdminController::class, 'index']);
+});
 
-// Route::view('/admin/home', 'admin.dashboard');
-Route::get('/admin/home', [AdminController::class, 'index']);
+Route::middleware(['auth', 'checkrole:admin'])->group(function () {
+
+});
+
+Route::middleware(['auth', 'checkrole:user'])->group(function () {
+    Route::get('/exams', [QuestionController::class, 'index']);
+    Route::get('/get-questions', [QuestionController::class, 'getQuestions']);
+    Route::get('/question-by-id/{id}', [QuestionController::class, 'getQuestionById']);
+});
 
 // Route Data Tipe Soal
 Route::get('/admin/datatipesoal', [DatatipesoalController::class, 'index'])->name('datatipesoal.index');
@@ -60,9 +72,3 @@ Route::delete('/admin/datajawaban/delete/{id}', [AnswerController::class, 'destr
 // Route Data Peserta
 Route::get('/admin/datapeserta', [PesertaController::class, 'list'])->name('datapeserta.index');
 Route::delete('/admin/datapeserta/delete/{id}', [PesertaController::class, 'destroy'])->name('datapeserta.destroy');
-
-Route::get('/exams', [QuestionController::class, 'index']);
-Route::get('/get-questions', [QuestionController::class, 'getQuestions']);
-Route::get('/question-by-id/{id}', [QuestionController::class, 'getQuestionById']);
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

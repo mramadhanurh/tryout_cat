@@ -19,7 +19,8 @@
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;300;400;600;700&display=swap"
+        rel="stylesheet">
     <link href="{{ asset('beranda/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('beranda/css/bootstrap-icons.css') }}" rel="stylesheet">
     <link href="{{ asset('beranda/css/owl.carousel.min.css') }}" rel="stylesheet">
@@ -41,7 +42,8 @@
                 </div>
             </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -98,43 +100,83 @@
         <section class="section-padding pb-0 d-flex justify-content-center align-items-center">
             <div class="container">
                 <div class="row">
-                @if(session('success'))
-                    <script>
-                        Swal.fire('Success', '{{ session('success') }}', 'success');
-                    </script>
-                @endif
+                    @if (session('success'))
+                        <script>
+                            Swal.fire('Success', '{{ session('success') }}', 'success');
+                        </script>
+                    @endif
 
 
                     <div class="col-lg-12 col-12">
-                        <form action="{{ route('daftar.store') }}" method="POST" class="custom-form hero-form" role="form">
-                        @csrf
+                        <form action="{{ route('register') }}" method="POST" class="custom-form hero-form"
+                            role="form">
+                            @csrf
                             <h3 class="text-white mb-3">Silahkan isi pendaftaran..</h3>
 
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-12">
                                     <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon1"><i class="bi-person custom-icon"></i></span>
+                                        <span class="input-group-text" id="basic-addon1"><i
+                                                class="bi-person custom-icon"></i></span>
 
-                                        <input type="text" name="nama_lengkap" id="nama_lengkap" class="form-control" placeholder="Nama Lengkap" value="{{ old('nama_lengkap') }}">
+                                        <input type="text" name="name" id="name" class="form-control"
+                                            placeholder="Nama Lengkap" value="{{ old('name') }}">
                                     </div>
-                                    <span style="color:red">@error('nama_lengkap') {{ $message }} @enderror</span>
+                                    <span style="color:red">
+                                        @error('name')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
                                 </div>
 
                                 <div class="col-lg-6 col-md-6 col-12">
                                     <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon1"><i class="bi-phone custom-icon"></i></span>
+                                        <span class="input-group-text" id="basic-addon1"><i
+                                                class="bi-phone custom-icon"></i></span>
 
-                                        <input type="text" name="no_wa" id="no_wa" class="form-control" placeholder="No. WA" value="{{ old('no_wa') }}">
+                                        {{-- <input type="text" name="no_wa" id="no_wa" class="form-control" placeholder="No. WA" value="{{ old('no_wa') }}"> --}}
+                                        <input type="email" name="email" id="email" class="form-control"
+                                            placeholder="Email" value="{{ old('email') }}">
+
                                     </div>
-                                    <span style="color:red">@error('no_wa') {{ $message }} @enderror</span>
+                                    <span style="color:red">
+                                        @error('email')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
                                 </div>
+                            </div>
 
-                                <div class="col-lg-12 col-12">
-                                    <button type="submit" class="form-control">
-                                        Daftar
-                                    </button>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon1"><i
+                                                class="bi-eye custom-icon"></i></span>
+
+                                        <input type="password" name="password" id="password" class="form-control"
+                                            placeholder="Password" value="{{ old('password') }}">
+                                    </div>
+                                    <span style="color:red">
+                                        @error('password')
+                                            {{ $message }}
+                                        @enderror
+                                    </span>
                                 </div>
+                                <div class="col-lg-6 col-md-6 col-12">
+                                    <div class="input-group">
+                                        <span class="input-group-text" id="basic-addon1"><i
+                                                class="bi-eye custom-icon"></i></span>
 
+                                        <input type="password" name="password_confirmation" id="password-confirm"
+                                            class="form-control" placeholder="Konfrmasi Password">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-12 col-12">
+                                <button type="submit" class="form-control">
+                                    Daftar
+                                </button>
                             </div>
                         </form>
                     </div>
@@ -157,7 +199,9 @@
                     <div class="col-lg-6 col-10">
                         <h2 class="text-white mb-2">Over 10k opening jobs</h2>
 
-                        <p class="text-white">Gotto Job is a free HTML CSS template for job hunting related websites. This layout is based on the famous Bootstrap 5 CSS framework. Thank you for visiting Tooplate website.</p>
+                        <p class="text-white">Gotto Job is a free HTML CSS template for job hunting related websites.
+                            This layout is based on the famous Bootstrap 5 CSS framework. Thank you for visiting
+                            Tooplate website.</p>
                     </div>
 
                     <div class="col-lg-4 col-12 ms-auto">
@@ -247,7 +291,8 @@
                         <div class="input-group">
                             <span class="input-group-text" id="basic-addon1"><i class="bi-person"></i></span>
 
-                            <input type="text" name="newsletter-name" id="newsletter-name" class="form-control" placeholder="yourname@gmail.com" required>
+                            <input type="text" name="newsletter-name" id="newsletter-name" class="form-control"
+                                placeholder="yourname@gmail.com" required>
 
                             <button type="submit" class="form-control">
                                 <i class="bi-send"></i>
@@ -294,12 +339,14 @@
                     </div>
 
                     <div class="col-lg-3 col-12 mt-2 d-flex align-items-center mt-lg-0">
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Privacy Policy</a></li>
+                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Privacy Policy</a>
+                        </li>
 
                         <li class="footer-menu-item"><a href="#" class="footer-menu-link">Terms</a></li>
                     </div>
 
-                    <a class="back-top-icon bi-arrow-up smoothscroll d-flex justify-content-center align-items-center" href="#top"></a>
+                    <a class="back-top-icon bi-arrow-up smoothscroll d-flex justify-content-center align-items-center"
+                        href="#top"></a>
 
                 </div>
             </div>
