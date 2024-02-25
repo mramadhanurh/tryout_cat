@@ -2,8 +2,8 @@
     <li class="menu-header small text-uppercase">
         <span class="menu-header-text">Menu Utama</span>
     </li>
-    <li class="menu-item {{ request()->is('admin/home') ? 'active' : '' }}">
-        <a href="/admin/home" class="menu-link">
+    <li class="menu-item {{ request()->is('home') ? 'active' : '' }}">
+        <a href="/home" class="menu-link">
             <i class="menu-icon tf-icons bx bx-home-circle"></i>
             <div data-i18n="Basic">Dashboard</div>
         </a>

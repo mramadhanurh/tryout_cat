@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Datatipesoal;
 use App\Models\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,17 +19,9 @@ class AdminController extends Controller
         if (Auth::user()->role == 'admin') {
             return view('admin.dashboard');
         } elseif (Auth::user()->role == 'user') {
-            $first = Question::with('answers')->first();
-            $ids = Question::get()->pluck('id');
+            $tipeSoal = Datatipesoal::all();
 
-            $index = [];
-            $c = 1;
-            foreach ($ids as $id) {
-                $index[] = ['urut' => $c, 'id' => $id];
-                $c++;
-            }
-
-            return view('exams.index', compact('first', 'index'));
+            return view('exams.exams-home', compact('tipeSoal'));
         }
     }
 

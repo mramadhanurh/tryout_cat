@@ -25,4 +25,9 @@ class Question extends Model
     {
         return $this->belongsTo(Datatipesoal::class, 'datatipesoal_id');
     }
+
+    public function details()
+    {
+        return $this->hasMany(DetailUjian::class);
+    }
 }

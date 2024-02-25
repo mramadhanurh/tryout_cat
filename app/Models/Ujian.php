@@ -5,15 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Answer extends Model
+class Ujian extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['answer_text', 'weight', 'question_id'];
+    protected $fillable = [
+        'user_id', 'score', 'times'
+    ];
 
-    public function soal()
+    public function user()
     {
-        return $this->belongsTo(Question::class, 'question_id');
+        return $this->belongsTo(User::class, 'user_id');
     }
 
     public function details()
