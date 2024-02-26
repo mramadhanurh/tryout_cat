@@ -12,20 +12,20 @@ class AdminController extends Controller
 {
     public function __construct()
     {
-        // $this->middleware('auth');
+        $this->middleware('auth');
     }
 
     public function index()
     {
         
-        // if (Auth::user()->role == 'admin') {
-            // return view('admin.dashboard');
-        // } elseif (Auth::user()->role == 'user') {
+        if (Auth::user()->role == 'admin') {
+            return view('admin.dashboard');
+        } elseif (Auth::user()->role == 'user') {
             $tipeSoal = Datatipesoal::all();
             $info = InfoUjian::first();
 
             return view('exams.exams-home', compact('tipeSoal', 'info'));
-        // }
+        }
     }
 
     /**
