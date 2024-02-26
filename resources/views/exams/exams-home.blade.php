@@ -89,7 +89,7 @@
                     <table class="table">
                         <tr>
                             <td>{{ $info->judul }}</td>
-                            <td>110 soal / {{ $info->waktu }} menit</td>
+                            <td>{{ $jmlSoal }} soal / {{ $info->waktu }} menit</td>
                             <td>
                                 <a href="{{ route('exams') }}" type="button" id="mulaiButton"
                                     class="btn btn-success btn-block">Mulai</a>

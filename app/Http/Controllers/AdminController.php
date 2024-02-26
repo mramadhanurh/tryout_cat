@@ -23,8 +23,9 @@ class AdminController extends Controller
         } elseif (Auth::user()->role == 'user') {
             $tipeSoal = Datatipesoal::all();
             $info = InfoUjian::first();
+            $jmlSoal = Question::count();
 
-            return view('exams.exams-home', compact('tipeSoal', 'info'));
+            return view('exams.exams-home', compact('tipeSoal', 'info', 'jmlSoal'));
         }
     }
 
