@@ -286,6 +286,8 @@
             }
         }
         function finish(){
+            let number = $('#number').text()
+            saveAnswer(number)
             $.ajax({
                 type: "post",
                 url: "{{ route('exams/finish') }}",
