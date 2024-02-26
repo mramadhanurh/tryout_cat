@@ -205,6 +205,7 @@
         $('#btn-next').click(function(e){
             e.preventDefault();
             let number = parseInt($('#number').text())
+            saveAnswer(number)
             $('#number_'+number).removeClass('active')
             number++;
             $('#number_'+number).addClass('active')
@@ -212,11 +213,11 @@
             checkNumber()
             displayQuestion(number)
             console.log($('.answer_id:checked').val())
-            saveAnswer()
         })
         $('#btn-prev').click(function(e){
             e.preventDefault();
             let number = parseInt($('#number').text())
+            saveAnswer(number)
             $('#number_'+number).removeClass('active')
             number--;
             $('#number').text(number)
@@ -224,13 +225,12 @@
             checkNumber()
             displayQuestion(number)
             console.log($('.answer_id:checked').val())
-            saveAnswer()
         })
         $('.number').click(function(e){
-            saveAnswer();
+            let number = $(this).data('id')
+            saveAnswer(number);
             e.preventDefault();
             $('.number').removeClass('active')
-            let number = $(this).data('id')
             $('#number').text(number)
             $(this).addClass('active')
             checkNumber()
@@ -265,8 +265,12 @@
         }
         function saveAnswer(number){
             // console.log($('.answer_id:checked').val())
+            console.log(number)
+            console.log($('#number_'+number).length)
             let answer = $('.answer_id:checked').val()
+            console.log(answer)
             if(answer>0){
+                $('.number.active').addClass('answered')
                 $.ajax({
                     type: "post",
                     url: "{{ route('saveAnswer') }}",
