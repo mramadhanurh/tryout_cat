@@ -6,6 +6,7 @@ use App\Http\Controllers\DatasoalController;
 use App\Http\Controllers\DatatipesoalController;
 use App\Http\Controllers\PesertaController;
 use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\InfoUjianController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -63,6 +64,10 @@ Route::middleware(['auth', 'checkrole:admin,user'])->group(function () {
     Route::get('/admin/datapeserta', [PesertaController::class, 'list'])->name('datapeserta.index');
     Route::delete('/admin/datapeserta/delete/{id}', [PesertaController::class, 'destroy'])->name('datapeserta.destroy');
 
+    Route::get('/admin/infoujian', [InfoUjianController::class, 'index'])->name('infoujian.index');
+    Route::get('/admin/infoujian/create', [InfoUjianController::class, 'create'])->name('infoujian.create');
+    Route::post('/admin/infoujian/create', [InfoUjianController::class, 'store'])->name('infoujian.store');
+    Route::post('/admin/infoujian/edit', [InfoUjianController::class, 'update'])->name('infoujian.update');
     // Submit Ujian
 });
 
@@ -72,6 +77,9 @@ Route::middleware(['auth', 'checkrole:admin'])->group(function () {
 
 Route::middleware(['auth', 'checkrole:user'])->group(function () {
     Route::get('/exams', [QuestionController::class, 'index'])->name('exams');
-    Route::post('/exams/finish', [QuestionController::class, 'simpanUjian'])->name('exams/finish');
+    // Route::post('/exams/finish', [QuestionController::class, 'simpanUjian'])->name('exams/finish');
+    Route::post('/exams/finish', [QuestionController::class, 'submit'])->name('exams/finish');
+    Route::get('/exams/getQuestion/{id}', [QuestionController::class, 'getQuestion'])->name('getQuestion');
+    Route::post('/exams/saveanswer', [QuestionController::class, 'saveAnswer'])->name('saveAnswer');
 
 });

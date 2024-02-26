@@ -12,6 +12,12 @@
     <li class="menu-header small text-uppercase">
         <span class="menu-header-text">Data Dasar</span>
     </li>
+    <li class="menu-item {{ request()->is('admin/infoujian') ? 'active' : '' }}">
+        <a href="/admin/datatipesoal" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+            <div data-i18n="Basic">Info Ujian</div>
+        </a>
+    </li>
     <li class="menu-item {{ request()->is('admin/datatipesoal') ? 'active' : '' }}">
         <a href="/admin/datatipesoal" class="menu-link">
             <i class="menu-icon tf-icons bx bx-home-circle"></i>
