@@ -232,7 +232,7 @@
                 url: "{{ url('exams/getQuestion') }}/"+number,
                 dataType: 'json',
                 success: function(response) {
-                    $('#soal').empty().text(response.question.question_text)
+                    $('#soal').empty().html(response.question.question_text)
                     $('#question_id').val(response.question.id)
                     let answers = response.answer
                     html='';
