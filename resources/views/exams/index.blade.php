@@ -226,6 +226,16 @@
             console.log($('.answer_id:checked').val())
             saveAnswer()
         })
+        $('.number').click(function(e){
+            saveAnswer();
+            e.preventDefault();
+            $('.number').removeClass('active')
+            let number = $(this).data('id')
+            $('#number').text(number)
+            $(this).addClass('active')
+            checkNumber()
+            displayQuestion(number)
+        })
         function displayQuestion(number){
             $.ajax({
                 type: "get",
@@ -254,21 +264,26 @@
 
         }
         function saveAnswer(number){
-            $.ajax({
-                type: "post",
-                url: "{{ route('saveAnswer') }}",
-                data: {
-                    'question_id' : $('#question_id').val(),
-                    'answer_id' : $('.answer_id:checked').val(),
-                    'ujian_id' : $('#ujian_id').val()
-                },
-                dataType: 'json',
-                success: function(response) {
-                    
+            // console.log($('.answer_id:checked').val())
+            let answer = $('.answer_id:checked').val()
+            if(answer>0){
+                $.ajax({
+                    type: "post",
+                    url: "{{ route('saveAnswer') }}",
+                    data: {
+                        'question_id' : $('#question_id').val(),
+                        'answer_id' : answer, //$('.answer_id:checked').val(),
+                        'ujian_id' : $('#ujian_id').val()
+                    },
+                    dataType: 'json',
+                    success: function(response) {
+                        
 
-                },
+                    },
 
-            }); 
+                }); 
+
+            }
 
         }
         function checkNumber(){

@@ -153,6 +153,7 @@ class QuestionController extends Controller
         $ujian = Ujian::find($_POST['ujian_id']);
         $ujian->times = 0;
         $ujian->save();
+        return json_encode(['status' => 'success']);
     }
 
 }
