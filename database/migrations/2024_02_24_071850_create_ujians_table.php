@@ -17,7 +17,7 @@ class CreateUjiansTable extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->string('score');
-            $table->string('times');
+            $table->integer('times');
             $table->timestamps();
         });
     }

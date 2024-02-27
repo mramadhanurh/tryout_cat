@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Answer;
 use App\Models\Datatipesoal;
 use App\Models\Question;
 use App\Models\InfoUjian;
+use App\Models\Ujian;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,7 +21,12 @@ class AdminController extends Controller
     {
         
         if (Auth::user()->role == 'admin') {
-            return view('admin.dashboard');
+            $totalTipeSoal = Datatipesoal::count();
+            $totalSoal = Question::count();
+            $totalJawaban = Answer::count();
+            $totalUjian = Ujian::count();
+            $latestDaftarUjian = Ujian::latest()->take(5)->get();
+            return view('admin.dashboard', compact('totalTipeSoal', 'totalSoal', 'totalJawaban', 'totalUjian', 'latestDaftarUjian'));
         } elseif (Auth::user()->role == 'user') {
             $tipeSoal = Datatipesoal::all();
             $info = InfoUjian::first();

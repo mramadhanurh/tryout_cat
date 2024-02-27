@@ -86,6 +86,7 @@
                                     mendukung proses dan persiapan menghadapi ujian / seleksi di tempat impianmu. Ayo bergabung sekarang!</span>
                             </p>
 
+                            <a href="/login" class="custom-btn custom-border-btn btn"><i class="bi bi-box-arrow-in-right"></i> <b>Login</b></a>
                             <a href="/daftar" class="custom-btn custom-border-btn btn"><i class="bi bi-person-plus"></i> <b>Daftar</b></a>
                         </div>
                     </div>

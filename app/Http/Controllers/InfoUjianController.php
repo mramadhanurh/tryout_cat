@@ -95,16 +95,16 @@ class InfoUjianController extends Controller
         }
     }
 
-    public function destroy($id)
-    {
-        $delete = DB::table('datatipesoals')
-                    ->where('id', $id)
-                    ->delete();
-        if($delete){
-            return back()->with('success','Data berhasil dihapus!');
-        }else{
-            return back()->with('fail','Something went wrong');
-        }
-    }
+    // public function destroy($id)
+    // {
+    //     $delete = DB::table('datatipesoals')
+    //                 ->where('id', $id)
+    //                 ->delete();
+    //     if($delete){
+    //         return back()->with('success','Data berhasil dihapus!');
+    //     }else{
+    //         return back()->with('fail','Something went wrong');
+    //     }
+    // }
     //
 }
