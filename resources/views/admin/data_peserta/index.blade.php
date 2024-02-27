@@ -27,26 +27,16 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama Lengkap</th>
-                            <th>No WA</th>
-                            <th class="text-center">Action</th>
+                            <th>Nama</th>
+                            <th>Email</th>
                         </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                        @foreach($peserta as $item)
+                        @foreach($user as $item)
                         <tr>
                             <td>{{ $loop->iteration }}.</td>
-                            <td>{{ $item->nama_lengkap }}</td>
-                            <td>{{ $item->no_wa }}</td>
-                            <td class="text-center" width="200">
-                                <form action="{{ route('datapeserta.destroy', $item->id)}}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-sm btn-danger">
-                                        <i class="bx bx-trash me-1"></i> Delete
-                                    </button>
-                                </form>
-                            </td>
+                            <td>{{ $item->name }}</td>
+                            <td>{{ $item->email }}</td>
                         </tr>
                         @endforeach
                     </tbody>

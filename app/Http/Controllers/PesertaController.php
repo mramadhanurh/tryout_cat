@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Peserta;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,8 +17,8 @@ class PesertaController extends Controller
 
     public function list()
     {
-        $peserta = Peserta::latest()->get();
-        return view('admin.data_peserta.index', compact('peserta'));
+        $user = User::where('role', 'user')->latest()->get();
+        return view('admin.data_peserta.index', compact('user'));
     }
 
     public function create()

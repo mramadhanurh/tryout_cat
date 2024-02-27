@@ -12,12 +12,7 @@
     <li class="menu-header small text-uppercase">
         <span class="menu-header-text">Data Dasar</span>
     </li>
-    <li class="menu-item {{ request()->is('admin/infoujian') ? 'active' : '' }}">
-        <a href="/admin/datatipesoal" class="menu-link">
-            <i class="menu-icon tf-icons bx bx-home-circle"></i>
-            <div data-i18n="Basic">Info Ujian</div>
-        </a>
-    </li>
+    
     <li class="menu-item {{ request()->is('admin/datatipesoal') ? 'active' : '' }}">
         <a href="/admin/datatipesoal" class="menu-link">
             <i class="menu-icon tf-icons bx bx-home-circle"></i>
@@ -59,18 +54,25 @@
     <li class="menu-header small text-uppercase">
         <span class="menu-header-text">Pengaturan</span>
     </li>
-    <li class="menu-item">
+
+    <li class="menu-item {{ request()->is('admin/infoujian') ? 'active' : '' }}">
+        <a href="/admin/infoujian" class="menu-link">
+            <i class="menu-icon tf-icons bx bx-home-circle"></i>
+            <div data-i18n="Basic">Info Ujian</div>
+        </a>
+    </li>
+    <!-- <li class="menu-item">
         <a href="cards-basic.html" class="menu-link">
             <i class="menu-icon tf-icons bx bx-home-circle"></i>
             <div data-i18n="Basic">Data Akun User</div>
         </a>
-    </li>
+    </li> -->
 
-    <li class="menu-item">
+    <!-- <li class="menu-item">
         <a href="cards-basic.html" class="menu-link">
             <i class="menu-icon tf-icons bx bx-home-circle"></i>
             <div data-i18n="Basic">Profile Saya</div>
         </a>
-    </li>
+    </li> -->
 
 </ul>

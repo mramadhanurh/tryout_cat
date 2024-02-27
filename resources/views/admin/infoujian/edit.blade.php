@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container-xxl flex-grow-1 container-p-y">
-    <h4 class="py-3 mb-3"><span class="text-muted fw-light">Edit Data</span> Info Ujian</h4>
+    <h4 class="py-3 mb-3"><span class="text-muted fw-light">Pengaturan</span> Info Ujian</h4>
     <div class="row">
         <div class="col-md-12">
             <div class="card mb-4">
