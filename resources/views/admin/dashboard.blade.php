@@ -8,13 +8,12 @@
                 <div class="d-flex align-items-end row">
                     <div class="col-sm-7">
                         <div class="card-body">
-                            <h5 class="card-title text-primary">Congratulations John! 🎉</h5>
+                            <h5 class="card-title text-primary">Selamat Datang Kembali Admin! 🎉</h5>
                             <p class="mb-4">
-                                You have done <span class="fw-medium">72%</span> more sales today. Check your new badge in
-                                your profile.
+                                Yuk pantau terus peserta ujian agar berjalan lancar
                             </p>
 
-                            <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
+                            <a href="/ranking" class="btn btn-sm btn-outline-primary">View Ranking</a>
                         </div>
                     </div>
                     <div class="col-sm-5 text-center text-sm-left">
@@ -82,7 +81,7 @@
                             @endforeach
                         </ul>
                     </div>
-                    <a href="/admin/datapeserta" class="btn rounded-pill btn-outline-primary" type="button">Peserta Lainnya</a>
+                    <a href="/admin/dataujian" class="btn rounded-pill btn-outline-primary" type="button">Peserta Lainnya</a>
                 </div>
             </div>
         </div>

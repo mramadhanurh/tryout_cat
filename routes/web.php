@@ -29,6 +29,7 @@ Route::get('/', function () {
 
 Route::get('/daftar', [PesertaController::class, 'index'])->name('daftar');
 Route::post('/daftar/create', [PesertaController::class, 'store'])->name('daftar.store');
+Route::get('/ranking', [PesertaController::class, 'ranking'])->name('ranking');
 
 Route::middleware(['auth', 'checkrole:admin,user'])->group(function () {
     //Route Home
@@ -64,6 +65,9 @@ Route::middleware(['auth', 'checkrole:admin,user'])->group(function () {
     // Route Data Peserta
     Route::get('/admin/datapeserta', [PesertaController::class, 'list'])->name('datapeserta.index');
     Route::delete('/admin/datapeserta/delete/{id}', [PesertaController::class, 'destroy'])->name('datapeserta.destroy');
+
+    // Route Data Ujian
+    Route::get('/admin/dataujian', [PesertaController::class, 'listujian'])->name('dataujian.index');
 
     Route::get('/admin/infoujian', [InfoUjianController::class, 'index'])->name('infoujian.index');
     Route::get('/admin/infoujian/create', [InfoUjianController::class, 'create'])->name('infoujian.create');

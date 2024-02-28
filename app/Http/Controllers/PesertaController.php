@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Peserta;
+use App\Models\Ujian;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -15,10 +16,22 @@ class PesertaController extends Controller
         return view('daftar');
     }
 
+    public function ranking()
+    {
+        $rankingscore = Ujian::latest()->get();
+        return view('ranking', compact('rankingscore'));
+    }
+
     public function list()
     {
         $user = User::where('role', 'user')->latest()->get();
         return view('admin.data_peserta.index', compact('user'));
+    }
+
+    public function listujian()
+    {
+        $ujian = Ujian::latest()->get();
+        return view('admin.data_ujian.index', compact('ujian'));
     }
 
     public function create()

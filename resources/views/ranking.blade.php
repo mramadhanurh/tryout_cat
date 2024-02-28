@@ -25,7 +25,7 @@
     <link href="{{ asset('beranda/css/owl.carousel.min.css') }}" rel="stylesheet">
     <link href="{{ asset('beranda/css/owl.theme.default.min.css') }}" rel="stylesheet">
     <link href="{{ asset('beranda/css/tooplate-gotto-job.css') }}" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.css" rel="stylesheet" />
 
 </head>
 
@@ -64,7 +64,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link custom-btn btn" href="#"><i class="bi bi-person-plus"></i> Daftar</a>
+                        <a class="nav-link custom-btn btn" href="/daftar"><i class="bi bi-person-plus"></i> Daftar</a>
                     </li>
                 </ul>
             </div>
@@ -80,13 +80,13 @@
                 <div class="row">
 
                     <div class="col-lg-12 col-12 text-center">
-                        <h1 class="text-white">Daftar</h1>
+                        <h1 class="text-white">Ranking</h1>
 
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb justify-content-center">
                                 <li class="breadcrumb-item"><a href="/">Home</a></li>
 
-                                <li class="breadcrumb-item active" aria-current="page">Daftar</li>
+                                <li class="breadcrumb-item active" aria-current="page">Ranking</li>
                             </ol>
                         </nav>
                     </div>
@@ -98,76 +98,33 @@
         <section class="section-padding pb-0 d-flex justify-content-center align-items-center">
             <div class="container">
                 <div class="row">
-                    @if (session('success'))
-                    <script>
-                        Swal.fire('Success', '{{ session('
-                            success ') }}', 'success');
-                    </script>
-                    @endif
-
-
                     <div class="col-lg-12 col-12">
-                        <form action="{{ route('register') }}" method="POST" class="custom-form hero-form" role="form">
-                            @csrf
-                            <h3 class="text-white mb-3">Silahkan isi pendaftaran..</h3>
+                        <form class="custom-form hero-form" role="form">
+                            <h2 class="text-white mb-3 text-center">Live Ranking Score</h2>
 
                             <div class="row">
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon1"><i class="bi-person custom-icon"></i></span>
-
-                                        <input type="text" name="name" id="name" class="form-control" placeholder="Nama Lengkap" value="{{ old('name') }}">
-                                    </div>
-                                    <span style="color:red">
-                                        @error('name')
-                                        {{ $message }}
-                                        @enderror
-                                    </span>
-                                </div>
-
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon1"><i class="bi-phone custom-icon"></i></span>
-
-                                        {{-- <input type="text" name="no_wa" id="no_wa" class="form-control" placeholder="No. WA" value="{{ old('no_wa') }}"> --}}
-                                        <input type="email" name="email" id="email" class="form-control" placeholder="Email" value="{{ old('email') }}">
-
-                                    </div>
-                                    <span style="color:red">
-                                        @error('email')
-                                        {{ $message }}
-                                        @enderror
-                                    </span>
+                                <div class="table-responsive text-nowrap">
+                                    <table class="table" id="datatable">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-white">NO</th>
+                                                <th class="text-white">NAMA</th>
+                                                <th class="text-white">SCORE</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table-border-bottom-0">
+                                            @foreach($rankingscore as $item)
+                                            <tr>
+                                                <td class="text-white" width="50px">{{ $loop->iteration }}.</td>
+                                                <td class="text-white">{{ $item->user->name }}</td>
+                                                <td class="text-white">{{ $item->score }}</td>
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon1"><i class="bi-eye custom-icon"></i></span>
-
-                                        <input type="password" name="password" id="password" class="form-control" placeholder="Password" value="{{ old('password') }}">
-                                    </div>
-                                    <span style="color:red">
-                                        @error('password')
-                                        {{ $message }}
-                                        @enderror
-                                    </span>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <div class="input-group">
-                                        <span class="input-group-text" id="basic-addon1"><i class="bi-eye custom-icon"></i></span>
-
-                                        <input type="password" name="password_confirmation" id="password-confirm" class="form-control" placeholder="Konfrmasi Password">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-12 col-12">
-                                <button type="submit" class="form-control">
-                                    Daftar
-                                </button>
-                            </div>
                         </form>
                     </div>
 
@@ -179,30 +136,6 @@
             </div>
         </section>
 
-
-        <section class="cta-section">
-            <div class="section-overlay"></div>
-
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-6 col-10">
-                        <h2 class="text-white mb-2">Kontak Bimbelku ID</h2>
-
-                        <p class="text-white">Ada yang ingin ditanyakan? Informasi lebih lanjut bisa hubungi</p>
-                    </div>
-
-                    <div class="col-lg-4 col-12 ms-auto">
-                        <div class="custom-border-btn-wrap d-flex align-items-center mt-lg-4 mt-2">
-                            <a href="https://t.me/+6_56sAmKwIVmODg1" class="custom-btn custom-border-btn btn me-4">Join Grub Telegram</a>
-
-                            <a href="http://wa.me/62881082508828" class="custom-link">Chat WA</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer class="site-footer">
@@ -307,6 +240,17 @@
     <script src="{{ asset('beranda/js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('beranda/js/counter.js') }}"></script>
     <script src="{{ asset('beranda/js/custom.js') }}"></script>
+    <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#datatable').DataTable();
+
+            setTimeout(function() {
+                location.reload();
+            }, 30000);
+        })
+    </script>
 
 </body>
 

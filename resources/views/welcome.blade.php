@@ -46,7 +46,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav align-items-center ms-lg-5">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Home</a>
+                        <a class="nav-link active" href="/">Home</a>
                     </li>
 
                     <li class="nav-item">
@@ -54,7 +54,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
+                        <a class="nav-link" href="/ranking">Ranking</a>
                     </li>
 
                     <li class="nav-item ms-lg-auto">
@@ -130,49 +130,7 @@
                 <div class="row justify-content-center align-items-center">
 
                     <div class="col-lg-12 col-12 text-center">
-                        <h2 class="mb-5">Browse by <span>Categories</span></h2>
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6">
-                        <div class="categories-block">
-                            <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100">
-                                <i class="categories-icon bi-window"></i>
-
-                                <small class="categories-block-title">Web design</small>
-
-                                <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
-                                    <span class="categories-block-number-text">320</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6">
-                        <div class="categories-block">
-                            <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100">
-                                <i class="categories-icon bi-twitch"></i>
-
-                                <small class="categories-block-title">Marketing</small>
-
-                                <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
-                                    <span class="categories-block-number-text">180</span>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-2 col-md-4 col-6">
-                        <div class="categories-block">
-                            <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100">
-                                <i class="categories-icon bi-play-circle-fill"></i>
-
-                                <small class="categories-block-title">Video</small>
-
-                                <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
-                                    <span class="categories-block-number-text">340</span>
-                                </div>
-                            </a>
-                        </div>
+                        <h2 class="mb-5">Keuntungan Ikut Bimbelku</h2>
                     </div>
 
                     <div class="col-lg-2 col-md-4 col-6">
@@ -180,11 +138,7 @@
                             <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100">
                                 <i class="categories-icon bi-globe"></i>
 
-                                <small class="categories-block-title">Websites</small>
-
-                                <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
-                                    <span class="categories-block-number-text">140</span>
-                                </div>
+                                <small class="categories-block-title">MUDAH DIAKSES</small>
                             </a>
                         </div>
                     </div>
@@ -192,13 +146,29 @@
                     <div class="col-lg-2 col-md-4 col-6">
                         <div class="categories-block">
                             <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100">
-                                <i class="categories-icon bi-people"></i>
+                                <i class="categories-icon bi-book"></i>
 
-                                <small class="categories-block-title">Customer Support</small>
+                                <small class="categories-block-title">SOAL LENGKAP</small>
+                            </a>
+                        </div>
+                    </div>
 
-                                <div class="categories-block-number d-flex flex-column justify-content-center align-items-center">
-                                    <span class="categories-block-number-text">84</span>
-                                </div>
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <div class="categories-block">
+                            <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100">
+                                <i class="categories-icon bi-lightbulb"></i>
+
+                                <small class="categories-block-title">MENTOR TERBAIK</small>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-4 col-6">
+                        <div class="categories-block">
+                            <a href="#" class="d-flex flex-column justify-content-center align-items-center h-100">
+                                <i class="categories-icon bi-file-slides"></i>
+
+                                <small class="categories-block-title">LIVE RANKING</small>
                             </a>
                         </div>
                     </div>
@@ -208,7 +178,7 @@
         </section>
 
 
-        <section class="about-section">
+        <!-- <section class="about-section">
             <div class="container">
                 <div class="row">
 
@@ -253,11 +223,11 @@
 
                 </div>
             </div>
-        </section>
+        </section> -->
 
 
-        <section class="job-section job-featured-section section-padding" id="job-section">
-        </section>
+        <!-- <section class="job-section job-featured-section section-padding" id="job-section">
+        </section> -->
 
 
         <section>
@@ -266,38 +236,23 @@
 
                     <div class="col-lg-6 col-12">
                         <div class="custom-text-block custom-border-radius-start">
-                            <h2 class="text-white mb-3">Gotto helps you an easier way to get new job</h2>
+                            <h2 class="text-white mb-3">Lebih Dari 71.283</h2>
 
-                            <p class="text-white">You are not allowed to redistribute the template ZIP file on any other template collection website. Please contact us for more info. Thank you.</p>
+                            <p class="text-white">Peserta Bimbelkuid Dalam Persiapan Untuk Seleksi PPPK | CPNS | BUMN | DLL</p>
+                            <br>
 
-                            <div class="d-flex mt-4">
-                                <div class="counter-thumb">
-                                    <div class="d-flex">
-                                        <span class="counter-number" data-from="1" data-to="12" data-speed="1000"></span>
-                                        <span class="counter-number-text">M</span>
-                                    </div>
+                            <h2 class="text-white">Daftar Program Tryout Nasional SKD CPNS 2024</h2>
+                            <p class="text-white">Klik Link Disamping >></p>
 
-                                    <span class="counter-text">Daily active users</span>
-                                </div>
-
-                                <div class="counter-thumb">
-                                    <div class="d-flex">
-                                        <span class="counter-number" data-from="1" data-to="450" data-speed="1000"></span>
-                                        <span class="counter-number-text">k</span>
-                                    </div>
-
-                                    <span class="counter-text">Opening jobs</span>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
                     <div class="col-lg-6 col-12">
                         <div class="video-thumb">
-                            <img src="{{ asset('beranda/images/people-working-as-team-company.jpg') }}" class="about-image custom-border-radius-end img-fluid" alt="">
+                            <img src="{{ asset('beranda/images/CPNS2024.5.jpg') }}" class="about-image custom-border-radius-end img-fluid" alt="">
 
                             <div class="video-info">
-                                <a href="https://www.youtube.com/tooplate" class="youtube-icon bi-youtube"></a>
+                                <a href="http://wa.me/62881082508828" class="youtube-icon bi bi-whatsapp"></a>
                             </div>
                         </div>
                     </div>
@@ -312,18 +267,18 @@
                 <div class="row">
 
                     <div class="col-lg-12 col-12">
-                        <h2 class="text-center mb-5">Happy customers</h2>
+                        <h2 class="text-center mb-5">Cerita Sukses di 2023</h2>
 
                         <div class="owl-carousel owl-theme reviews-carousel">
                             <div class="reviews-thumb">
 
                                 <div class="reviews-info d-flex align-items-center">
-                                    <img src="{{ asset('beranda/images/avatar/portrait-charming-middle-aged-attractive-woman-with-blonde-hair.jpg') }}" class="avatar-image img-fluid" alt="">
+                                    <img src="{{asset('testimoni')}}/01t.jpg" class="avatar-image img-fluid" alt="">
 
                                     <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                         <p class="mb-0">
-                                            <strong>Susan L</strong>
-                                            <small>Product Manager</small>
+                                            <strong>Delly</strong>
+                                            <small>Nilai Total : 489</small>
                                         </p>
 
                                     </div>
@@ -332,18 +287,18 @@
                                 <div class="reviews-body">
                                     <img src="{{ asset('beranda/images/left-quote.png') }}" class="quote-icon img-fluid" alt="">
 
-                                    <h4 class="reviews-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</h4>
+                                    <h4 class="reviews-title">Testimoni Bimbel: terimakasih atas TO nya gak nyesel belajar disini bimbingan nya bagus banget makasi ya 🤗 Alhamdulilah saya lolos Ka peringkat 1</h4>
                                 </div>
                             </div>
 
                             <div class="reviews-thumb">
                                 <div class="reviews-info d-flex align-items-center">
-                                    <img src="{{ asset('beranda/images/avatar/medium-shot-smiley-senior-man.jpg') }}" class="avatar-image img-fluid" alt="">
+                                    <img src="{{asset('testimoni')}}/02t.jpg" class="avatar-image img-fluid" alt="">
 
                                     <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                         <p class="mb-0">
-                                            <strong>Jack</strong>
-                                            <small>Technical Lead</small>
+                                            <strong>Yuyu</strong>
+                                            <small>Nilai Total : 437</small>
                                         </p>
 
                                     </div>
@@ -352,19 +307,19 @@
                                 <div class="reviews-body">
                                     <img src="{{ asset('beranda/images/left-quote.png') }}" class="quote-icon img-fluid" alt="">
 
-                                    <h4 class="reviews-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</h4>
+                                    <h4 class="reviews-title">Testimoni Bimbel : terimakasih para mentor penjelasanx mudah dipahami dan soal2x mirip dg soal p3k..peringkat 1 dit4 sya kerja..sukses sllu bimbelkuid</h4>
                                 </div>
                             </div>
 
                             <div class="reviews-thumb">
 
                                 <div class="reviews-info d-flex align-items-center">
-                                    <img src="{{ asset('beranda/images/avatar/portrait-beautiful-young-woman.jpg') }}" class="avatar-image img-fluid" alt="">
+                                    <img src="{{asset('testimoni')}}/03t.jpg" class="avatar-image img-fluid" alt="">
 
                                     <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                         <p class="mb-0">
-                                            <strong>Haley</strong>
-                                            <small>Sales & Marketing</small>
+                                            <strong>Zahroh</strong>
+                                            <small>Nilai Total : 543</small>
                                         </p>
 
                                     </div>
@@ -373,18 +328,18 @@
                                 <div class="reviews-body">
                                     <img src="{{ asset('beranda/images/left-quote.png') }}" class="quote-icon img-fluid" alt="">
 
-                                    <h4 class="reviews-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</h4>
+                                    <h4 class="reviews-title">Testimoni Bimbel: Terimakasih kak SDH memfasilitasi bimbel dan tryout ", Alhamdulillah bisa lulus P3K Bidan Ahli THN ini.🤲</h4>
                                 </div>
                             </div>
 
                             <div class="reviews-thumb">
                                 <div class="reviews-info d-flex align-items-center">
-                                    <img src="{{ asset('beranda/images/avatar/blond-man-happy-expression.jpg') }}" class="avatar-image img-fluid" alt="">
+                                    <img src="{{asset('testimoni')}}/06t.jpg" class="avatar-image img-fluid" alt="">
 
                                     <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                         <p class="mb-0">
-                                            <strong>Jackson</strong>
-                                            <small>Dev Ops</small>
+                                            <strong>Sanie Noviana</strong>
+                                            <small>Nilai Total : 510</small>
                                         </p>
 
                                     </div>
@@ -393,18 +348,18 @@
                                 <div class="reviews-body">
                                     <img src="{{ asset('beranda/images/left-quote.png') }}" class="quote-icon img-fluid" alt="">
 
-                                    <h4 class="reviews-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</h4>
+                                    <h4 class="reviews-title">Testimoni Bimbel : Alhamdulillah lolos di peringkat 1 bidan terampil. Terimakasih bimbelku.id materi nya lengkap jadi ga ribet cari materi yang ada d kisi-kisi dan latihan soal nya juga sangat membantu, banyak soal yang mirip mirip keluar saat tes</h4>
                                 </div>
                             </div>
 
                             <div class="reviews-thumb">
                                 <div class="reviews-info d-flex align-items-center">
-                                    <img src="{{ asset('beranda/images/avatar/university-study-abroad-lifestyle-concept.jpg') }}" class="avatar-image img-fluid" alt="">
+                                    <img src="{{asset('testimoni')}}/oo2o.jpg" class="avatar-image img-fluid" alt="">
 
                                     <div class="d-flex align-items-center justify-content-between flex-wrap w-100 ms-3">
                                         <p class="mb-0">
-                                            <strong>Kevin</strong>
-                                            <small>Internship</small>
+                                            <strong>Erna Yukriyah</strong>
+                                            <small>Nilai Total : 472</small>
                                         </p>
 
                                     </div>
@@ -413,7 +368,7 @@
                                 <div class="reviews-body">
                                     <img src="{{ asset('beranda/images/left-quote.png') }}" class="quote-icon img-fluid" alt="">
 
-                                    <h4 class="reviews-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</h4>
+                                    <h4 class="reviews-title">Testimoni Bimbel : Terima kasih,soal2 TO sangat membatu 🙏Saya dari Kalimantan Tengah, sangat2 berterimakasih kepada Bimbelkuid🥰</h4>
                                 </div>
                             </div>
                         </div>
@@ -431,16 +386,16 @@
                 <div class="row">
 
                     <div class="col-lg-6 col-10">
-                        <h2 class="text-white mb-2">Over 10k opening jobs</h2>
+                        <h2 class="text-white mb-2">Kontak Bimbelku ID</h2>
 
-                        <p class="text-white">If you are looking for free HTML templates, you may visit Tooplate website. If you need a collection of free templates, you can visit Too CSS website.</p>
+                        <p class="text-white">Ada yang ingin ditanyakan? Informasi lebih lanjut bisa hubungi</p>
                     </div>
 
                     <div class="col-lg-4 col-12 ms-auto">
                         <div class="custom-border-btn-wrap d-flex align-items-center mt-lg-4 mt-2">
-                            <a href="#" class="custom-btn custom-border-btn btn me-4">Create an account</a>
+                            <a href="https://t.me/+6_56sAmKwIVmODg1" class="custom-btn custom-border-btn btn me-4">Join Grub Telegram</a>
 
-                            <a href="#" class="custom-link">Post a job</a>
+                            <a href="http://wa.me/62881082508828" class="custom-link">Chat WA</a>
                         </div>
                     </div>
 
@@ -466,70 +421,45 @@
                         <i class="custom-icon bi-globe me-1"></i>
 
                         <a href="#" class="site-footer-link">
-                            www.jobbportal.com
+                            www.bimbelku.com
                         </a>
                     </p>
 
                     <p class="mb-2">
                         <i class="custom-icon bi-telephone me-1"></i>
 
-                        <a href="tel: 305-240-9671" class="site-footer-link">
-                            305-240-9671
+                        <a href="tel: 0881082508828" class="site-footer-link">
+                            0881082508828
                         </a>
                     </p>
 
                     <p>
                         <i class="custom-icon bi-envelope me-1"></i>
 
-                        <a href="mailto:info@yourgmail.com" class="site-footer-link">
-                            info@jobportal.co
+                        <a href="mailto:bimbelkuid@gmail.com" class="site-footer-link">
+                            bimbelkuid@gmail.com
                         </a>
                     </p>
 
                 </div>
 
                 <div class="col-lg-2 col-md-3 col-6 ms-lg-auto">
-                    <h6 class="site-footer-title">Company</h6>
+                    <h6 class="site-footer-title">Menu</h6>
 
                     <ul class="footer-menu">
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">About</a></li>
+                        <li class="footer-menu-item"><a href="/" class="footer-menu-link">Home</a></li>
 
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Blog</a></li>
+                        <li class="footer-menu-item"><a href="#testimoni" class="footer-menu-link">Testimoni</a></li>
 
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Jobs</a></li>
+                        <li class="footer-menu-item"><a href="/ranking" class="footer-menu-link">Ranking</a></li>
 
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Contact</a></li>
                     </ul>
                 </div>
 
-                <div class="col-lg-2 col-md-3 col-6">
-                    <h6 class="site-footer-title">Resources</h6>
+                <div class="col-lg-6 col-md-8 col-12 mt-3 mt-lg-0">
+                    <p>Kepercayaan adalah prioritas utama kami. Kami memahami bahwa bimbingan online yang terpercaya adalah kunci keberhasilan Anda dalam pendidikan. Oleh karena itu, semua tutor yang bekerja dengan Bimbelku.id telah melalui proses seleksi ketat dan telah terverifikasi untuk memastikan bahwa Anda mendapatkan bimbingan terbaik.</p>
 
-                    <ul class="footer-menu">
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Guide</a></li>
-
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">How it works</a></li>
-
-                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Salary Tool</a></li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-4 col-md-8 col-12 mt-3 mt-lg-0">
-                    <h6 class="site-footer-title">Newsletter</h6>
-
-                    <form class="custom-form newsletter-form" action="#" method="post" role="form">
-                        <h6 class="site-footer-title">Get notified jobs news</h6>
-
-                        <div class="input-group">
-                            <span class="input-group-text" id="basic-addon1"><i class="bi-person"></i></span>
-
-                            <input type="text" name="newsletter-name" id="newsletter-name" class="form-control" placeholder="yourname@gmail.com" required>
-
-                            <button type="submit" class="form-control">
-                                <i class="bi-send"></i>
-                            </button>
-                        </div>
-                    </form>
+                    <p><b>-CEO F.Sigit Dwi-</b></p>
                 </div>
 
             </div>
@@ -548,23 +478,11 @@
                     <div class="col-lg-5 col-12 mt-2 mt-lg-0">
                         <ul class="social-icon">
                             <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-twitter"></a>
+                                <a href="https://www.instagram.com/bimbelkuid" class="social-icon-link bi-instagram"></a>
                             </li>
 
                             <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-facebook"></a>
-                            </li>
-
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-linkedin"></a>
-                            </li>
-
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-instagram"></a>
-                            </li>
-
-                            <li class="social-icon-item">
-                                <a href="#" class="social-icon-link bi-youtube"></a>
+                                <a href="https://www.tiktok.com/@bimbelkuid" class="social-icon-link bi-tiktok"></a>
                             </li>
                         </ul>
                     </div>
