@@ -6,6 +6,8 @@ use App\Models\Datatipesoal;
 use App\Models\Question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\SoalImport;
 
 class DatasoalController extends Controller
 {
@@ -108,5 +110,16 @@ class DatasoalController extends Controller
         }else{
             return back()->with('fail','Something went wrong');
         }
+    }
+
+    public function importexcel(Request $request)
+    {
+        $data = $request->file('file');
+
+        $namafile = $data->getClientOriginalName();
+        $data->move('SoalData', $namafile);
+
+        Excel::import(new SoalImport, \public_path('/SoalData/'.$namafile));
+        return \redirect()->back()->with('success','Import data berhasil disimpan!');
     }
 }

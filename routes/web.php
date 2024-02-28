@@ -50,6 +50,7 @@ Route::middleware(['auth', 'checkrole:admin,user'])->group(function () {
     Route::get('/admin/datasoal/edit/{id}', [DatasoalController::class, 'edit'])->name('datasoal.edit');
     Route::post('/admin/datasoal/edit', [DatasoalController::class, 'update'])->name('datasoal.update');
     Route::delete('/admin/datasoal/delete/{id}', [DatasoalController::class, 'destroy'])->name('datasoal.destroy');
+    Route::post('/admin/datasoal/importexcel', [DatasoalController::class, 'importexcel'])->name('datasoal.importexcel');
 
     // Route Data Jawaban
     Route::get('/admin/datajawaban', [AnswerController::class, 'index'])->name('datajawaban.index');
