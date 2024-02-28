@@ -103,11 +103,12 @@ class QuestionController extends Controller
     public function getQuestion(Request $request){
         $id = $request->id;
         // var_dump($request);
-        $question = Question::Find($id);
+        $order = $id - 1;
+        $question = Question::skip($order)->take(1)->first();
         // var_dump($question);
-        $answers = Answer::where('question_id', $id)->get();
+        $answers = Answer::where('question_id', $question->id)->get();
 
-        $hasil = DB::select("select answer_id from detail_ujians left join ujians on ujians.id = detail_ujians.ujian_id where user_id =".Auth::user()->id." and question_id = ".$id." and cast(times as UNSIGNED) > 0 limit 1");
+        $hasil = DB::select("select answer_id from detail_ujians left join ujians on ujians.id = detail_ujians.ujian_id where user_id =".Auth::user()->id." and question_id = ".$question->id." and cast(times as UNSIGNED) > 0 limit 1");
         if(count($hasil) > 0){
             $hasil = $hasil[0]->answer_id;
         }else{
