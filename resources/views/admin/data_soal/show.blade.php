@@ -12,7 +12,7 @@
 
                         <div class="mb-3">
                             <label for="tipe" class="form-label">Tipe Soal</label>
-                            <p>{{ $data->tipeSoal->tipe_soal }}</p>
+                            <p>{{ $data->tipeSoal->tipe_soal ?? '-' }}</p>
                         </div>
                         
                         <div class="mb-3">

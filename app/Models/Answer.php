@@ -20,4 +20,9 @@ class Answer extends Model
     {
         return $this->hasMany(DetailUjian::class);
     }
+
+    public function question()
+    {
+        return $this->belongsTo(Question::class);
+    }
 }

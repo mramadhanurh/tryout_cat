@@ -50,7 +50,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}.</td>
                             <td>{!! Str::limit($item->question_text, 42) !!}</td>
-                            <td>{{ $item->tipeSoal->tipe_soal }}</td>
+                            <td>{{ $item->tipeSoal->tipe_soal ?? '-' }}</td>
                             <td class="text-center" width="200">
                                 <form action="{{ route('datasoal.destroy', $item->id)}}" method="POST">
                                     @csrf
