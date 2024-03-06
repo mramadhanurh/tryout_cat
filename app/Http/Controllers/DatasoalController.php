@@ -42,7 +42,7 @@ class DatasoalController extends Controller
 
         $query = DB::table('questions')->insert([
             'question_text' => $request->input('question_text'),
-            'datatipesoal_id' => $request->input('datatipesoal_id'),
+            'datatipesoal_id' => strip_tags($request->input('datatipesoal_id')) ,
         ]);
 
         if($query){

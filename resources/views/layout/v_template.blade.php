@@ -243,8 +243,6 @@
 
   <script src="https://cdn.datatables.net/v/dt/dt-1.13.4/datatables.min.js"></script>
 
-  <script src="https://cdn.ckeditor.com/ckeditor5/41.1.0/classic/ckeditor.js"></script>
-
   @yield('js')
 </body>
 
